@@ -1,0 +1,3 @@
+slurmstepd: error: *** JOB 4543539 ON swarm078 CANCELLED AT 2020-05-10T20:31:00 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** STEP 4543539.0 ON swarm078 CANCELLED AT 2020-05-10T20:31:00 DUE TO TIME LIMIT ***
