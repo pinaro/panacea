@@ -11,7 +11,7 @@ Requirements
 
 Data Collection
 ----
-This code collects data using a slightly modified version of Jinyu Xie's [Simglucose v0.2.1 (2018)] (https://github.com/jxx123/simglucose). Xie's code, found in the contents of folder SimGlucose, is incorporated into this repository for convenience.  
+This code collects data using a slightly modified version of Jinyu Xie's [Simglucose v0.2.1](https://github.com/jxx123/simglucose). Xie's code, found in the contents of folder SimGlucose, is incorporated into this repository for convenience.  
 
 Setup
 ----
