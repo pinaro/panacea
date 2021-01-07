@@ -1,10 +1,10 @@
-from simglucose.simulation.env import T1DSimEnv as _T1DSimEnv
-from simglucose.patient.t1dpatient import T1DPatient
-from simglucose.sensor.cgm import CGMSensor
-from simglucose.actuator.pump import InsulinPump
-from simglucose.simulation.scenario_gen import RandomScenario, WeightScenario
-from simglucose.simulation.env import risk_diff, neg_risk
-from simglucose.controller.base import Action
+from SimGlucose.simglucose.simulation.env import T1DSimEnv as _T1DSimEnv
+from SimGlucose.simglucose.patient.t1dpatient import T1DPatient
+from SimGlucose.simglucose.sensor.cgm import CGMSensor
+from SimGlucose.simglucose.actuator.pump import InsulinPump
+from SimGlucose.simglucose.simulation.scenario_gen import RandomScenario, WeightScenario
+from SimGlucose.simglucose.simulation.env import risk_diff, neg_risk
+from SimGlucose.simglucose.controller.base import Action
 import pandas as pd
 import numpy as np
 import gym

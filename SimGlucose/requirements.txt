@@ -1,0 +1,6 @@
+numpy==1.15.2
+simglucose
+random
+string
+scipy
+os

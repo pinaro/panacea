@@ -1,4 +1,4 @@
-from simglucose.patient.base import Patient
+from SimGlucose.simglucose.patient.base import Patient
 import numpy as np
 from scipy.integrate import ode
 import pandas as pd

@@ -3,43 +3,32 @@
 Created on Sun Nov  5 14:52:39 2017
 
 @author: Pinar Ozisik
-@description: Constants for safe policy improvement
+@description: Constants
 """
 
-# How many squares are there in the grid
-ROW = 3
+# Grid constants
+ROW = 3 # rows and cols in the grid
 COL = 3
-
 ACTIONS = ['UP', 'DOWN', 'RIGHT', 'LEFT']
-
 START = (0, 0) # start state
 FINISH = (ROW-1, COL-1) # end state
+GAMMA = 0.95 # discount factor
+TAU = 51 #<-- was set to this during results #10 # can't get it to handle more than 20 for AM. Can handle anything for CH, but setting B is an issue 
 
-EPISODES = 100000 #split between safety and candidate data -- going more than 1e+5 takes forever
-TRIALS = 10000#int(1e+6) # number of trials for computing J(policy)
-SPI_TIME = 20 # 50 rounds of SPI
-PATH = '/Users/Pinar/Desktop/NeurIPS_fig1/grid_b_policies/' #/mnt/nfs/work1/brian/pinar/Safe-Secure-RL/
+# Diabetes constants
+PATIENT = 'adult#003' # Found patient-specific variables from /params/Quest.csv
+CR_MEAN = 9
+CF_MEAN = 17.9345522688
+MIN_RETURN = -45
+MAX_RETURN = -20
+CR_LOW, CF_LOW = 3, 5 #env.action_space.low
+CR_HIGH, CF_HIGH = 30, 50 #env.action_space.high
 
-# Hyperparameters
-GAMMA = 0.95
-SIGMA = 0.5
-
-# Portion of D to split into D_candidate and D_safety
-SPLIT = 1 # safety get 80% candidate gets 20%
+# Constants for both domains
+PATH = './'
 DELTA = 0.05
-
-# CMA-ES parameters
-SIGMA = 1.0
-MAXITER = 50
-TOLFUN = 1e-12
-DISCOUNT_FACTOR = 10
-#CMA_TRIALS = 5000 # number of trials for computing J(policy) in CMA-ES
-
-# Adversarial Parameters
-COUNT = 1
-BIG_CONSTANT = 1000000
-
-# Safe RL parameters
-B = 60#30
-TAU = 51 #10 # can't get it to handle more than 20 for AM. Can handle anything for CH, but setting B is an issue 
-# AM got it to work for TAU = 10 both for IS and WIS
+NUM_DATASETS = 100#750
+NUM_POINTS_PER_DATASET = 1000#1500
+NUM_SAMPLES_FOR_J = 10000
+ALPHA_IS = [0.1, 0.5, 1, 5]
+ALPHA_WIS = [0.01, 0.5, 1]

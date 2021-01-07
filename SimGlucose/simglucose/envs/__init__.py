@@ -1,1 +1,1 @@
-from simglucose.envs.simglucose_gym_env import *
+from SimGlucose.simglucose.envs.simglucose_gym_env import *

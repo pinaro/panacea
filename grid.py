@@ -69,32 +69,8 @@ def select_random_action(s, policy):
     for i in range(0, probs.shape[0]):
         if rand_val < probs[i]:
             return i
-#        if i == 0: # first
-#            if rand_val < probs[i]:
-#                assert i > -1 and i < len(ACTIONS)
-#                return i
-#        elif i == probs.shape[0]-1: # last
-#            print('i', i)
-#            print('rand_val', rand_val)
-#            print('probs[i]', probs[i])
-#            assert rand_val <= probs[i]
-##            try:
-##                assert rand_val <= probs[i]
-##            except AssertionError as error:
-##                print('rand: ', rand_val)
-##                print('i: ', i)
-##                print('probs[i]: ', probs[i])
-#            assert i > -1 and i < len(ACTIONS)
-#            return i
-#        else:
-#            if rand_val < probs[i]:
-#                assert i > -1 and i < len(ACTIONS)
-#                return i
 
-# Trajectory: [(s, a, r), (s, a, r), (s, a, r), ...]
-# Each action is represented as an integer: 0 for UP, 1 for DOWN, 2 for RIGHT, 3 for LEFT
-# flag = False means do not use tau; otherwise use tau
-def sample_trajectories(policy, flag=False, num=EPISODES):
+def sample_trajectories(policy, num, flag=False):
     new_directory = PATH+'trajectories-'+''.join([random.choice(string.ascii_letters + string.digits) for n in range(10)])
     os.mkdir(new_directory)
     #trajectories = []
@@ -122,20 +98,15 @@ def sample_trajectories(policy, flag=False, num=EPISODES):
                 e.append((s, a, r))
                 s = s_prime
                 time += 1
-        #print('Time: ', time)
-        #assert time < TAU
-        #print(e)
         pickle.dump(e, open(new_directory+'/trajectory-'+str(episodes)+'.p', 'wb'))
         if time > max_time:
             max_time = time
     #assert max_time > -1
     return new_directory+'/', max_time # returns directory where trajectories are kept
-        #trajectories.append(e)
-    #return trajectories
 
 def compute_J(policy): 
     reward = 0
-    for t in range(0, TRIALS):
+    for t in range(0, NUM_SAMPLES_FOR_J):
         s = START
         time = 0
         e = []

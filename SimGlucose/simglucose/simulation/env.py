@@ -1,10 +1,10 @@
-from simglucose.patient.t1dpatient import Action
-from simglucose.analysis.risk import risk_index
+from SimGlucose.simglucose.patient.t1dpatient import Action
+from SimGlucose.simglucose.analysis.risk import risk_index
 import pandas as pd
 from datetime import timedelta
 import logging
 from collections import namedtuple
-from simglucose.simulation.rendering import Viewer
+from SimGlucose.simglucose.simulation.rendering import Viewer
 import numpy as np
 import numbers
 from copy import deepcopy
